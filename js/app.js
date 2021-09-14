@@ -39,9 +39,10 @@ const addDetails = (id) => {
   const showProductDetails = (product) => {
     const productDetails = document.getElementById('productDetails');
     productDetails.innerHTML = `
-      <div class='single-productDetails w-50 mx-auto p-5 mb-5 d-flex justify-content-between text-white'>
+      <div class='single-productDetails w-75 mx-auto p-5 mb-5 d-flex justify-content-between text-white'>
       <div class="align-middle">
         <img class="product-image" src="${product.image}">
+        <h3>Price: $ ${product.price}</h3>
       </div>
       <div class="ps-3">
         <h3 class="mt-0">${product.title}</h3>
@@ -107,4 +108,19 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
+// BuyNow redirection
+const totalPrice = document.getElementById('total-price');
+totalPrice.innerHTML=`
+  <h3 class="text-center">Total Price :<span class="text-info"> $</span><span id="totalP" class="text-warning">0</span></h3>
+`;
+/*  const showPrice = () =>{
+  const grandTotal =
+  getInputValue("price") + getInputValue("delivery-charge") +
+  getInputValue("total-tax");
+  console.log('grandTotal');
+document.getElementById("totalP").innerText = grandTotal.toFixed(2);
+
+} 
+showPrice();  */
 
